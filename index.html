@@ -10,8 +10,8 @@ function calculate()
         premium = document.getElementById("premium").value;
 		premium = 1 + (premium/100);
 		warrantPrice = ((premium * motherPrice)-exercisePrice)/ratio;
-        document.getElementById("warrantPrice").innerHTML = warrantPrice.toFixed(2);
-		document.getElementById("gearing").innerHTML = (motherPrice/(warrantPrice*ratio)).toFixed(2);
+        document.getElementById("warrantPrice").innerHTML = warrantPrice.toFixed(3);
+		document.getElementById("gearing").innerHTML = (motherPrice/(warrantPrice*ratio)).toFixed(3);
 }
 
   </script>
