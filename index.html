@@ -2,19 +2,16 @@
 <html> 
 <head>
 <script type="text/javascript">
-function multiplyBy()
+function calculate()
 {
-        num1 = document.getElementById("firstNumber").value;
-        num2 = document.getElementById("secondNumber").value;
-        document.getElementById("result").innerHTML = num1 * num2;
+        motherPrice = document.getElementById("motherPrice").value;
+        exercisePrice = document.getElementById("exercisePrice").value;
+        ratio = document.getElementById("ratio").value;
+        premium = document.getElementById("premium").value;
+        document.getElementById("warrantPrice").innerHTML = ((premium * motherPrice)-exercisePrice)/ratio
+		document.getElementById("gearing").innerHTML = motherPrice/(warrantPrice*ratio)
 }
 
-function divideBy() 
-{ 
-        num1 = document.getElementById("firstNumber").value;
-        num2 = document.getElementById("secondNumber").value;
-document.getElementById("result").innerHTML = num1 / num2;
-}
   </script>
 <meta charset=utf-8 />
 <title>JavaScript program to calculate multiplication and division of two numbers </title>
@@ -24,13 +21,16 @@ body {margin: 30px;}
 </head>
 <body>
 <form>
-1st Number : <input type="text" id="firstNumber" /><br>
-2nd Number: <input type="text" id="secondNumber" /><br>
-<input type="button" onClick="multiplyBy()" Value="Multiply" />
-<input type="button" onClick="divideBy()" Value="Divide" />
+Mother Price (RM) : <input type="text" id="motherPrice" /><br>
+Exercise Price (RM) : <input type="text" id="exercisePrice" /><br>
+Ratio : <input type="text" id="ratio" /><br>
+Premium (%) : <input type="text" id="premium" /><br>
+<input type="button" onClick="calculate()" Value="Calculate" />
 </form>
-<p>The Result is : <br>
-<span id = "result"></span>
+<p>The Gearing is : <br>
+<span id = "gearing"></span>
+<p>The Warrants Price is(RM) : <br>
+<span id = "warrantPrice"></span>
 </p>
 </body>
 </html>
