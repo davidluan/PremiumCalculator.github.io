@@ -8,7 +8,8 @@ function calculate()
         exercisePrice = document.getElementById("exercisePrice").value;
         ratio = document.getElementById("ratio").value;
         premium = document.getElementById("premium").value;
-        document.getElementById("warrantPrice").innerHTML = ((premium * motherPrice)-exercisePrice)/ratio
+		warrantPrice = ((premium * motherPrice)-exercisePrice)/ratio
+        document.getElementById("warrantPrice").innerHTML = warrantPrice
 		document.getElementById("gearing").innerHTML = motherPrice/(warrantPrice*ratio)
 }
 
@@ -21,10 +22,10 @@ body {margin: 30px;}
 </head>
 <body>
 <form>
-Mother Price (RM) : <input type="text" id="motherPrice" /><br>
-Exercise Price (RM) : <input type="text" id="exercisePrice" /><br>
-Ratio : <input type="text" id="ratio" /><br>
-Premium (%) : <input type="text" id="premium" /><br>
+Mother Price (RM) : <input type="text" size="5" id="motherPrice" /><br>
+Exercise Price (RM) : <input type="text" size="5" id="exercisePrice" /><br>
+Ratio : <input type="text" id="ratio" size="5" /><br>
+Premium (%) : <input type="text" id="premium" size="5" /><br>
 <input type="button" onClick="calculate()" Value="Calculate" />
 </form>
 <p>The Gearing is : <br>
